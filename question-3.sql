@@ -1,1 +1,1 @@
--- Provide a query that includes the purchased track name AND artist name with each invoice line item.
+SELECT i.*,  t.name as 'track', ar.name as 'artist' FROM invoice_items as i JOIN tracks as t on i.trackid = t.trackid JOIN albums as al on al.albumid = t.albumid JOIN artists as ar on ar.artistid = al.artistid;

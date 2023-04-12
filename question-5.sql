@@ -1,1 +1,1 @@
--- What was the most purchased track of 2013?
+SELECT name, count(t.trackid) as count FROM invoice_items as il JOIN invoices as i on i.invoiceid = il.invoiceid JOIN tracks as t on t.trackid = il.trackid WHERE i.invoicedate BETWEEN '2013-01-01' and '2013-12-31' GROUP BY t.trackid ORDER BY count DESC;

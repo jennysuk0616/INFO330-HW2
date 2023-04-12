@@ -1,1 +1,1 @@
--- Which sales agent made the most in sales in 2010?
+SELECT firstname, lastname, max(total) from (select e.*, sum(total) as  'Total' FROM employees as e JOIN customers as c on e.employeeid = c.supportrepid join invoices as i on i.customerid = c.customerid WHERE i.invoicedate BETWEEN '2010-01-00' and '2010-12-31' GROUP BY e.employeeid);

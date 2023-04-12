@@ -1,1 +1,1 @@
--- Show the sales agent's full name and invoices associated with each sales agent.
+SELECT e.firstname, e.lastname, i.invoiceid, i.customerid, i.invoicedate, i.billingaddress, i.billingcountry, i.billingpostalcode, i.total FROM customers as c, invoices as i on c.customerid = i.customerid JOIN employees as e on e.employeeid = c.supportrepid ORDER BY e.employeeid;

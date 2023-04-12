@@ -1,1 +1,1 @@
--- Show the customer's full name, Invoice ID, Date of the invoice and billing country of customers who are from Brazil.
+SELECT c.firstname, c.lastname, i.invoiceid, i.invoicedate, i.billingcountry FROM customers as c, invoices as i WHERE c.country = 'Brazil' and c.customerid = i.customerid;
